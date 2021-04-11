@@ -6,7 +6,7 @@
  */
 import java.util.Arrays;
 
-//Solution O (m + n)
+//Solution O (m + nyyy)
 
 public class CheckPermutation {
        private int s1[] = new int[256];
