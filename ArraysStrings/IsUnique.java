@@ -1,3 +1,5 @@
+package ArraysStrings;
+
 import java.util.Arrays;
 
 /**
@@ -6,6 +8,7 @@ import java.util.Arrays;
 Hints: #44, #7 7 7, #732
  */
 
+ 
  //Solution O(k)
 public class IsUnique{
     int ascii[] = new int[256];

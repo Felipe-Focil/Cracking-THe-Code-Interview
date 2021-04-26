@@ -1,3 +1,5 @@
+package ArraysStrings;
+
 /**
  * Check Permutation: Given two strings,
  * Write a method to decide if one is a permutation of the other.
