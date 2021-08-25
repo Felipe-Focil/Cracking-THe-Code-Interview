@@ -1,15 +1,17 @@
+package LinkedLists;
+
 public class ReturnKthToLast {
 
     // O(n)
-    Node function(SimpleLinkedList list, int k){
-        int size  = 0 - k;
+    Node function(SimpleLinkedList list, int k) {
+        int size = 0 - k;
 
-        Node end  = list.head;
+        Node end = list.head;
         Node index = list.head;
 
-        while(end.nxt != null){
+        while (end.nxt != null) {
             size++;
-            if(size > 0){
+            if (size > 0) {
                 index = index.nxt;
             }
             end = end.nxt;
@@ -36,6 +38,5 @@ public class ReturnKthToLast {
         System.out.println(cci.function(l, 3).data);
         System.out.println(cci.function(l, 9).data);
     }
-
 
 }

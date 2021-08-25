@@ -1,46 +1,48 @@
-public class SimpleLinkedList{
+package LinkedLists;
+
+public class SimpleLinkedList {
     Node head = null;
 
-    public void append(int data){
+    public void append(int data) {
 
-        if(head == null){
+        if (head == null) {
             head = new Node(data);
             return;
         }
         Node current = head;
-        while(current.nxt != null){
+        while (current.nxt != null) {
             current = current.nxt;
         }
         current.nxt = new Node(data);
     }
 
-    public void append(Node n){
-        if(head == null){
+    public void append(Node n) {
+        if (head == null) {
             head = n;
             return;
         }
         Node current = head;
-        while(current.nxt != null){
+        while (current.nxt != null) {
             current = current.nxt;
         }
         current.nxt = n;
     }
 
-    public void print(){
+    public void print() {
         Node current = head;
 
-        while(current !=null){
-            System.out.print(current.data + " - > ") ;
+        while (current != null) {
+            System.out.print(current.data + " - > ");
             current = current.nxt;
         }
         System.out.print("null \n");
     }
 
-    int getLength(){
+    int getLength() {
         int length = 0;
         Node n = head;
 
-        while(n !=null){
+        while (n != null) {
             length++;
             n = n.nxt;
         }
@@ -48,17 +50,17 @@ public class SimpleLinkedList{
         return length;
     }
 
-    void invertList(){
+    void invertList() {
         Node left = null;
         Node current = head;
         Node right = head.nxt;
 
-        while(current!=null){
+        while (current != null) {
             current.nxt = left;
             left = current;
             current = right;
 
-            if(right != null){
+            if (right != null) {
                 right = right.nxt;
             }
 
@@ -67,17 +69,16 @@ public class SimpleLinkedList{
         }
     }
 
-    Node index(int i){
+    Node index(int i) {
         int idx = 0;
         Node n = head;
-        while(idx != i || n == null){
+        while (idx != i || n == null) {
             n = n.nxt;
             idx++;
         }
 
         return n;
-        
+
     }
 
-  
 }

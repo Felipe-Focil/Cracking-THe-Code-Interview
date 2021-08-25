@@ -1,11 +1,13 @@
+package LinkedLists;
+
 public class LoopDetection {
 
-    public Node function(SimpleLinkedList l){
+    public Node function(SimpleLinkedList l) {
 
-        Node  slow = l.head.nxt, fast = l.head.nxt.nxt;
-        
-        while(slow != null && fast !=null){
-            if(slow == fast){
+        Node slow = l.head.nxt, fast = l.head.nxt.nxt;
+
+        while (slow != null && fast != null) {
+            if (slow == fast) {
                 break;
             }
 
@@ -14,13 +16,13 @@ public class LoopDetection {
 
         }
 
-        if(slow == null || fast == null){
+        if (slow == null || fast == null) {
             return null;
         }
 
         slow = l.head;
 
-        while(slow != fast){
+        while (slow != fast) {
             slow = slow.nxt;
             fast = fast.nxt;
         }
@@ -44,11 +46,11 @@ public class LoopDetection {
         n.nxt = l.index(0);
         l.append(n);
         Node cycle = cci.function(l);
-        if(cycle == null){
+        if (cycle == null) {
             System.out.println("No Cycle");
-        }else{
+        } else {
             System.out.println(cycle.data);
         }
     }
-    
+
 }

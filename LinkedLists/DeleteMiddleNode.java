@@ -1,24 +1,26 @@
+package LinkedLists;
+
 public class DeleteMiddleNode {
 
-    void function(SimpleLinkedList list){
+    void function(SimpleLinkedList list) {
         Node slow = list.head;
         Node fast = list.head;
 
         Node toDelete = slow;
 
-        while(fast.nxt != null){
-            if(fast.nxt.nxt !=null){
+        while (fast.nxt != null) {
+            if (fast.nxt.nxt != null) {
                 fast = fast.nxt.nxt;
-            }else{
+            } else {
                 fast = fast.nxt;
             }
             toDelete = slow;
             slow = slow.nxt;
         }
 
-            if(list.head.nxt.nxt !=null){
-                toDelete.nxt = slow.nxt;
-            }
+        if (list.head.nxt.nxt != null) {
+            toDelete.nxt = slow.nxt;
+        }
     }
 
     public static void main(String[] args) {
@@ -47,7 +49,7 @@ public class DeleteMiddleNode {
         l.print();
         cci.function(l);
         l.print();
-        
+
     }
-    
+
 }

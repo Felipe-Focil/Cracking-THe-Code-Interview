@@ -1,16 +1,17 @@
-import java.util.Arrays;
+package ArraysStrings;
+
 public class StringRotation {
-    
-    private boolean isSubstring(String s1, String s2){
+
+    private boolean isSubstring(String s1, String s2) {
         return s2.contains(s1);
     }
 
-    public String concataneItself(String str){
+    public String concataneItself(String str) {
         return str + str;
     }
 
-    public boolean function(String s1, String s2){
-            return isSubstring(s1,concataneItself(s2));
+    public boolean function(String s1, String s2) {
+        return isSubstring(s1, concataneItself(s2));
     }
 
     public static void main(String[] args) {

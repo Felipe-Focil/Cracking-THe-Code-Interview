@@ -1,39 +1,38 @@
+package LinkedLists;
+
 import java.util.HashMap;
 import java.util.HashSet;
 
-public class RemoveDups{
-    
-    //Time O(n), Space O(n)
-    public void functionWithBuffer(SimpleLinkedList list){
+public class RemoveDups {
+
+    // Time O(n), Space O(n)
+    public void functionWithBuffer(SimpleLinkedList list) {
         HashSet<Integer> set = new HashSet<Integer>();
         Node current = list.head;
         Node prev = null;
 
-        while(current != null){
-            if(set.contains(current.data)){
+        while (current != null) {
+            if (set.contains(current.data)) {
                 prev.nxt = current.nxt;
-            }else{
+            } else {
                 set.add(current.data);
                 prev = current;
             }
             current = current.nxt;
         }
 
-        
-
     }
 
-    //Time O(n^2), Space O(1)
-    public void functionWithoutBuffer(SimpleLinkedList list){
+    // Time O(n^2), Space O(1)
+    public void functionWithoutBuffer(SimpleLinkedList list) {
         Node slow = list.head;
-        
 
-        while(slow != null){
+        while (slow != null) {
             Node fast = slow;
-            while(fast.nxt != null){
-                if(fast.nxt.data == slow.data){
+            while (fast.nxt != null) {
+                if (fast.nxt.data == slow.data) {
                     fast.nxt = fast.nxt.nxt;
-                }else{
+                } else {
                     fast = fast.nxt;
                 }
             }
@@ -54,7 +53,7 @@ public class RemoveDups{
         l1.append(3);
         l1.append(3);
         l1.append(3);
-        
+
         l1.print();
         cci.functionWithBuffer(l1);
         l1.print();
@@ -68,7 +67,7 @@ public class RemoveDups{
         l2.append(11);
         l2.append(6);
         l2.append(7);
-        
+
         l2.print();
         cci.functionWithoutBuffer(l2);
         l2.print();
